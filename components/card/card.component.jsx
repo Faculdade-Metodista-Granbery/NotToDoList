@@ -43,7 +43,7 @@ const CardQuote = ({ quote, author, profileImg }) => {
                 style={styles.title}
                 titleStyle={{fontSize: 18}}
                 left={({ }) => 
-                    <Avatar.Image size={42} source={profileImg} />
+                    <Avatar.Image size={42} source={{ uri: profileImg }} />
                 }/>
             <Card.Content style={styles.content}>
                 <Paragraph style={styles.quote}>{quote}</Paragraph>
