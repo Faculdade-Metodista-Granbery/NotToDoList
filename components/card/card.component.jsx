@@ -8,9 +8,9 @@ import { Button, Card, Paragraph } from 'react-native-paper';
 
 const styles = StyleSheet.create({
     content: {
-        flex: 1,
         backgroundColor: '#c64242',
         padding: 24,
+        minHeight: 50,
     },
     actions: {
         backgroundColor: '#f7c2c2',
@@ -28,11 +28,16 @@ const styles = StyleSheet.create({
 
 const CardQuote = ({ quote }) => {
     return (
-        <Card >
+        <Card>
             <Card.Content style={styles.content}>
                 <Paragraph style={styles.quote}>{quote}</Paragraph>
             </Card.Content>
             <Card.Actions style={styles.actions}>
+                <Button 
+                icon="share-variant" 
+                color='#541616'
+                labelStyle={{ fontSize: 24 }}
+                />
                 <Button 
                 icon="star-outline" 
                 color='#541616'

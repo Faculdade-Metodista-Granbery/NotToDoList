@@ -1,15 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, FlatList } from 'react-native';
 import CardQuote from './components/card/card.component';
+
+const notList = [
+  { id: 1, quote: 'Não caia no golpe!'},
+  { id: 2, quote: 'Não mande mensagem para o/a ex!'},
+  { id: 3, quote: 'Não esqueça comida na AirFryer!'},
+  { id: 4, quote: 'Não responda stories bêbado!'},
+  { id: 5, quote: 'Não deixe a roupa lavada na máquina!'},
+]
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <CardQuote 
-        quote='Não caia no golpe!'
-      />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <FlatList
+      data={notList}
+      keyExtractor={item => item.id}
+      renderItem={({ item }) =>
+          <CardQuote
+            quote={item.quote}
+          />
+        }
+      >
+
+      </FlatList>
+    </SafeAreaView>
   );
 }
 
